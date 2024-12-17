@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace maratonAPI.Models;
 
@@ -10,6 +11,6 @@ public partial class Eredmenyek
     public int Kor { get; set; }
 
     public int Ido { get; set; }
-
-    public virtual Futok FutoNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual Futok? FutoNavigation { get; set; } = null!;
 }

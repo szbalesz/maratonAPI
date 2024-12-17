@@ -14,6 +14,7 @@ namespace maratonAPI
             // Add services to the container.
             builder.Services.AddDbContext<MaratonvaltoContext>();
             builder.Services.AddScoped<FutokInterface, FutokService>();
+            builder.Services.AddScoped<EredmenyekInterface, EredmenyekService>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
