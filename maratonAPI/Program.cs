@@ -1,4 +1,8 @@
 
+using maratonAPI.Models;
+using maratonAPI.Repositories.Interfaces;
+using maratonAPI.Repositories.Services;
+
 namespace maratonAPI
 {
     public class Program
@@ -8,7 +12,8 @@ namespace maratonAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddDbContext<MaratonvaltoContext>();
+            builder.Services.AddScoped<FutokInterface, FutokService>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
